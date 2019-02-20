@@ -1,3 +1,21 @@
 :local(.test) {
-  background-color: red;
+  background-color: gray;
+  padding: 50px;
+}
+
+:local(.show) {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+:local(.showImg) {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin-right: 5px;
+  border-radius: 5px;
 }

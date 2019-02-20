@@ -18,6 +18,7 @@ class Home extends React.Component {
 
   render() {
     const { shows } = this.props;
+    console.log(shows);
     return (
       <div className={styles.test}>
         <MetaTags title="Some nice hooome pages bros" description="yo bro, this is THE page dude" />
@@ -25,7 +26,10 @@ class Home extends React.Component {
           <div key={showKey}>
             <h2>{showKey}</h2>
             {shows[showKey].map(({ show }) => (
-              <div key={show.id}>{show.name}</div>
+              <div key={show.id} className={styles.show}>
+                <div style={{ backgroundImage: `url(${show.image.medium})` }} className={styles.showImg} />
+                {show.name}
+              </div>
             ))}
           </div>
         ))}
