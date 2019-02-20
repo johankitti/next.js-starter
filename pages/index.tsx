@@ -9,8 +9,12 @@ import { fetchShows } from '../ducks/shows';
 
 import styles from './index.scss';
 
-class Home extends React.Component {
-  static async getInitialProps({ reduxStore }) {
+export interface HomeProps {
+  shows: any;
+}
+
+class Home extends React.Component<HomeProps> {
+  public static async getInitialProps({ reduxStore }): any {
     // const isServer = !!req;
     await ['batman', 'aquaman', 'spiderman', 'x-men'].forEach(show => {
       reduxStore.dispatch(fetchShows(show));
@@ -18,7 +22,7 @@ class Home extends React.Component {
     return {};
   }
 
-  render() {
+  public render(): React.ReactNode {
     const { shows } = this.props;
     return (
       <div className={styles.test}>
@@ -44,7 +48,7 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = ({ showsReducer }) => ({
+const mapStateToProps = ({ showsReducer }): any => ({
   shows: showsReducer.shows || [],
 });
 

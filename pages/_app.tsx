@@ -14,7 +14,7 @@ import MetaTags from '../components/metatags';
 import withReduxStore from '../lib/with-redux-store';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  public static async getInitialProps({ Component, ctx }): any {
     const { reduxStore } = ctx;
     let pageProps = {};
 
@@ -27,7 +27,7 @@ class MyApp extends App {
     return { pageProps };
   }
 
-  render() {
+  public render(): React.ReactNode {
     const { Component, pageProps, reduxStore } = this.props;
     return (
       <Container>

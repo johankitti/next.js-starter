@@ -1,7 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 
-const MetaTags = ({ title, description, image, url, type, published, updated, tags }) => (
+interface MetaTagsProps {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  type: string;
+  published: string;
+  updated: string;
+  tags: string;
+}
+
+const MetaTags = ({ title, description, image, url, type, published, updated, tags }: MetaTagsProps): React.ReactNode => (
   <Head>
     {title && <title>{title}</title>}
     {description && <meta name="description" content={description} key="desc" />}

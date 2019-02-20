@@ -2,13 +2,13 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  public static async getInitialProps(ctx): any {
     const initialProps = await Document.getInitialProps(ctx);
 
     return { ...initialProps };
   }
 
-  render() {
+  public render(): React.ReactNode {
     return (
       <html lang="en">
         <Head>
