@@ -1,6 +1,7 @@
-const compose = require('next-compose');
+const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const withSass = require('@zeit/next-sass');
+const withTypescript = require('@zeit/next-typescript');
 
 const sassConfig = { cssModules: true };
 const bundleAnalyzerConfig = {
@@ -18,12 +19,4 @@ const bundleAnalyzerConfig = {
   },
 };
 
-module.exports = compose([
-  [withSass, sassConfig],
-  [withBundleAnalyzer, bundleAnalyzerConfig],
-  {
-    webpack: config => {
-      return config;
-    },
-  },
-]);
+module.exports = withPlugins([[withTypescript], [withSass, sassConfig], [withBundleAnalyzer, bundleAnalyzerConfig]]);
