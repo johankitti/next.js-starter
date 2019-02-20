@@ -18,7 +18,6 @@ class Home extends React.Component {
 
   render() {
     const { shows } = this.props;
-    console.log(shows);
     return (
       <div className={styles.test}>
         <MetaTags title="Some nice hooome pages bros" description="yo bro, this is THE page dude" />
