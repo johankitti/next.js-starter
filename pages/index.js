@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import Head from 'next/head';
 
 // Components
 import MetaTags from '../components/metatags';
@@ -13,7 +12,7 @@ import styles from './index.scss';
 class Home extends React.Component {
   static async getInitialProps({ reduxStore }) {
     // const isServer = !!req;
-    await reduxStore.dispatch(fetchShows());
+    await reduxStore.dispatch(fetchShows('batman'));
     return {};
   }
 
@@ -22,8 +21,13 @@ class Home extends React.Component {
     return (
       <div className={styles.test}>
         <MetaTags title="Some nice hooome pages bros" description="yo bro, this is THE page dude" />
-        {shows.map(({ show: { id, name } }) => (
-          <div key={id}>{name}</div>
+        {Object.keys(shows).map(showKey => (
+          <div key={showKey}>
+            <h2>{showKey}</h2>
+            {shows[showKey].map(({ show }) => (
+              <div key={show.id}>{show.name}</div>
+            ))}
+          </div>
         ))}
       </div>
     );
@@ -31,7 +35,7 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = ({ showsReducer }) => ({
-  shows: showsReducer.shows,
+  shows: showsReducer.shows || [],
 });
 
 const enhanced = compose(connect(mapStateToProps))(Home);
