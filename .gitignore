@@ -1,0 +1,4 @@
+.next
+node_modules
+bundle-analyze
+yarn-error.log
