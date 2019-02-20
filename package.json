@@ -15,7 +15,12 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "./node_modules/.bin/prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "./node_modules/.bin/stylelint --fix",
+      "./node_modules/.bin/prettier --write",
       "git add"
     ]
   },
