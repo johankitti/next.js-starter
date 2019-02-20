@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-sass": "^1.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -39,7 +40,6 @@
     "stylelint-order": "^2.0.0"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
     "compression": "^1.7.3",
     "express": "^4.16.4",
