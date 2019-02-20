@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {
-    "precommit": "lint-staged",
     "dev": "next -p 8080",
     "build": "next build",
     "build:analyze": "BUNDLE_ANALYZE=both next build",
     "start": "NODE_ENV=production node server.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
