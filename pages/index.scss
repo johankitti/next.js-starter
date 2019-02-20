@@ -1,11 +1,11 @@
 :local(.test) {
   background-color: gray;
   padding: 50px;
+  font-family: 'Roboto', sans-serif;
 }
 
 :local(.show) {
   background-color: white;
-  font-family: 'Roboto', sans-serif;
   display: inline-flex;
   align-items: center;
   margin-bottom: 5px;
