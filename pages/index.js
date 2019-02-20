@@ -27,7 +27,10 @@ class Home extends React.Component {
             {shows[showKey].map(({ show }) => (
               <div key={show.id} className={styles.show}>
                 <div style={{ backgroundImage: `url(${show.image.medium})` }} className={styles.showImg} />
-                {show.name}
+                <div className={styles.text}>
+                  <span className={styles.title}>{show.name}</span>
+                  <span className={styles.desc}>{show.name}</span>
+                </div>
               </div>
             ))}
           </div>
